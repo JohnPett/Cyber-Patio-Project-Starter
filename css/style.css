@@ -17,6 +17,14 @@ html {
 h1 {
     font-size: 2rem;
 }
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
 /*
   LOGO
@@ -27,6 +35,7 @@ h1 {
     font-size: 4rem;
     line-height: 6rem;
     grid-column-start: 1;
+    white-space: nowrap;
 }
 
 /*
@@ -34,7 +43,21 @@ MENU
 */
 .menu {
     grid-column-start: 6;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
 }
+
+.menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin-left: 1rem;
+    line-height: 4rem;
+}
+
 
 /*
 GRID
@@ -43,6 +66,18 @@ GRID
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
     margin: 2rem;
+}
+
+.grid--gallery {
+    grid-template-rows: repeat(6, 1fr);
+}
+
+/*
+IMAGE
+*/
+
+.image {
+width: 350px;
+height: auto;
 }
