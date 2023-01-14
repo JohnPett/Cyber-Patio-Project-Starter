@@ -19,6 +19,7 @@ h1 {
     font-size: 2rem;
 } 
 
+
 /*
     MENU
 */
@@ -26,6 +27,7 @@ h1 {
 .menu {
     grid-column-start: 6;
 } 
+
 
 /*
     LOGO
@@ -37,13 +39,8 @@ h1 {
     font-weight: bold;
     font-size: 4rem;
     line-height: 4rem;
-
+    
 } 
-
-/*
-    MENU
-*/
-
 
 
 /*
