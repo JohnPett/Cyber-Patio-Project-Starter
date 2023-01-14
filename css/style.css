@@ -39,7 +39,7 @@ h1 {
     font-weight: bold;
     font-size: 4rem;
     line-height: 4rem;
-    
+
 } 
 
 
@@ -51,5 +51,5 @@ h1 {
     display: grid;
     grid-template-columns: repeat(6,1fr);
     grid-template-rows: repeat(6,1fr);
-    margin: 2px;
+    margin: 2rem;
 } 
