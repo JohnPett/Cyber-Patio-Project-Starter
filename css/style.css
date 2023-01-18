@@ -1,4 +1,17 @@
 /*
+  FONT
+*/
+
+@font-face {
+    font-family: 'Ladi';
+    src: url('Ladi-Gross.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+
+/*
   GLOBAL
 */
 
@@ -12,11 +25,19 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
+
 
 h1 {
     font-size: 2rem;
 }
+
+h2 {
+    font-family: 'Ladi';
+    font-size: 4rem;
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -24,15 +45,32 @@ a {
 
 a:hover {
     text-decoration: underline;
+    font-style: italic;
+    color: orangered;
+}
+
+p,
+a {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-family: sans-serif;
+}
+
+p {
+  filter: blur(0.7rem);  
+}
+
+p:hover {
+    filter: blur(0)
 }
 
 /*
   LOGO
 */
 .logo {
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 4rem;
+    font-family: 'Ladi';
+    font-weight: normal;
+    font-size: 6rem;
     line-height: 6rem;
     grid-column-start: 1;
     white-space: nowrap;
@@ -44,6 +82,7 @@ MENU
 .menu {
     grid-column-start: 6;
     font-size: 1.5rem;
+    font-family: sans-serif;
     display: flex;
     align-items: center;
 }
@@ -66,18 +105,77 @@ GRID
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    margin: 2rem;
-}
+    margin: 5rem;
+  }
 
-.grid--gallery {
-    grid-template-rows: repeat(6, 1fr);
-}
+  .grid--about p, 
+  .grid--contact a { 
+    grid-column-start: 1;
+    grid-column-end: 6;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  } 
+  
+  .grid--gallery {
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .grid__image {
+    position: relative;
+    display: flex;
+  }
+  
+  .grid__image img {
+    /*filter: grayscale(100%);
+    opacity: 0.75;*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .grid__image:nth-of-type(1) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background: ;
+  }
+  
+  .grid__image:nth-of-type(2) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background: teal;
+  }
+
+  .grid__image:nth-of-type(3) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    background: blue;
+  }
+
+  .grid__image:nth-of-type(4) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    background: pink;
+  }
 
 /*
 IMAGE
 */
 
 .image {
-width: 350px;
+width: 100%;
 height: auto;
 }

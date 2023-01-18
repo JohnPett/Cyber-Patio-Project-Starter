@@ -8,8 +8,8 @@
     <script type="text/javascript" src="js/script.js"></script> <!-- define where our javascript is -->
   </head>
   <body> 
-    <section class="grid grid--header">
-      <h1 class="logo">Ines Playground</h1>
+    <header class="grid grid--header">
+      <h1 class="logo">~*INES PLAY*~</h1>
       <nav class="menu">
         <ul>
           <li><a href="#">about</a></li>
@@ -17,10 +17,31 @@
           <li><a href="#">contact</a></li>
         </ul>
       </nav>
-     </section>
+    </header>
+     <section class="grid grid--about" id="about">
+      <h2>WHO</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vestibulum dictum vulputate erat, non finibus massa cursus non. 
+        Morbi lorem turpis, sagittis sed fermentum tempor, finibus non nibh. 
+        Vivamus lacinia cursus ultrices. Aenean pulvinar arcu semper metus tincidunt imperdiet. 
+        Mauris tristique libero vitae libero aliquet, et fringilla dui laoreet.</p>
+    </section>
      <section class="grid grid--gallery">
-      <img class="image" src="img/1.png"/>
+      <div class="grid__image">
+        <img src="img/1.png" />
+      </div>
+      <div class="grid__image">
+        <img src="img/2.png" />
+      </div>
+      <div class="grid__image">
+        <img src="img/3.png" />
+      </div>
+      <div class="grid__image">
+        <img src="img/4.png" />
+      </div>
      </section>
-    </div>
+     <section class="grid grid--contact" id="contact">
+      <a href="mailto:email@me.qt" target="_blank">email@me.qt</a>
+    </section>
   </body>
 </html>
