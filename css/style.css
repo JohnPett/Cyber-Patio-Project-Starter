@@ -95,7 +95,7 @@ a {
 } 
 
 .grid--header {
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(3,1fr);
 }
 
 .grid--about p{ 
@@ -130,9 +130,8 @@ a {
     display: flex;
   }
 
-.grid__image img {
-    filter: grayscale(100%);
-    opacity: 0.75;
+.grid__image img,
+.grid__video video {
     top: 0;
     left: 0;
     right: 0;
@@ -142,6 +141,14 @@ a {
     object-fit: cover;
     object-position: center;
   }
+
+.grid__image:hover img,
+.grid__video:hover video {
+  opacity: 1;
+  filter: grayscale(50%);
+  mix-blend-mode: exclusion;
+  background-color: pink;
+}
   
   .grid__image:nth-of-type(1) {
     grid-column-start: 1;
@@ -189,4 +196,12 @@ a {
     grid-row-start: 3;
     grid-row-end: 5;
     background: teal;
+  }
+
+  .grid__video {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    background: plum;
   }
