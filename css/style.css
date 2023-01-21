@@ -57,11 +57,15 @@ a {
 }
 
 p {
-  filter: blur(0.7rem);  
+  filter: blur(0.7rem); 
+  color: orangered;
+  
 }
 
 p:hover {
-    filter: blur(0)
+    filter: blur(0);
+    color: black;
+    transition: all 0.5s linear;
 }
 
 /*
