@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Ladi';
-    src: url('Ladi-Gross.woff2') format('woff2');
+    src: url('../fonts/Ladi-Gross.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -112,12 +112,27 @@ GRID
     margin: 5rem;
   }
 
+  .grid--about {
+    position: relative;
+  }
+
+  .grid--about img {
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    z-index: 1;
+    width: 200px;
+    height: auto;
+  }  
+
   .grid--about p, 
   .grid--contact a { 
     grid-column-start: 1;
     grid-column-end: 6;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
   } 
   
   .grid--gallery {
