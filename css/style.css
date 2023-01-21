@@ -46,23 +46,29 @@ a {
 */
 
 .menu {
-    grid-column-start: 6;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    background: green;
 } 
 
 .menu ul {
     display: flex;
     list-style: none;
-
-
 }
 
 .menu li {
-    margin-left: 1rem;
     line-height: 4rem;
+}
 
+.menu li:nth-child(2) {
+  background: pink;
+  margin: 0 2rem;
 }
 
 
@@ -81,6 +87,12 @@ a {
     line-height: 6rem;
     letter-spacing: -0.1rem;
     white-space: nowrap;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: flex;
+    justify-content: space-between;
+    background: red;
+    text-align: justify;
 } 
 
 
@@ -96,6 +108,7 @@ a {
 
 .grid--header {
     grid-template-columns: repeat(3,1fr);
+    position: relative;
 }
 
 .grid--about p{ 
