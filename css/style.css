@@ -17,7 +17,6 @@ html {
 }
 
 header {
-  background: green;
   text-align: center;
   padding: 2rem;
 }
@@ -28,7 +27,6 @@ footer {
   padding: 2rem;
   position: absolute;
   bottom: 0;
-  background: teal;
   left: 0;
   right: 0;
 }
@@ -41,13 +39,22 @@ section {
   min-height: 100vh;
 }
 
+img {
+  max-width: 80%;
+  max-height: 80%;
+  opacity: 0.7;
+  filter: grayscale(100%);
+}
+
+/*
+  CONTENT
+*/
+
 .content {
-  background: pink;
   z-index: 2;
 }
 
 .content__numbers {
-  background: orange;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   position: absolute;
@@ -59,13 +66,20 @@ section {
 }
 
 .content__number {
-  background: red;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.content__number:hover {
+  font-family: serif;
+  color: red;
 }
 
 .background {
-  background: blue;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
