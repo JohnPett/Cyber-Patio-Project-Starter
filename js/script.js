@@ -9,9 +9,9 @@ function init() {
     img.src = src;
   };
 
-  const images = [...document.querySelectorAll('.content__number')];
-  images.forEach(image => {
-    image.addEventListener('mouseover', onNumberHover);
+  const numbers = [...document.querySelectorAll('.content__number')];
+  numbers.forEach(number => {
+    number.addEventListener('mouseover', onNumberHover);
   });
 }
 
