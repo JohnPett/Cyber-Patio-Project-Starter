@@ -10,7 +10,7 @@ function init() {
   };
 
   const numbers = [...document.querySelectorAll('.content__number')];
-  numbers.forEach(number => {
+  numbers.forEach(function(number) {
     number.addEventListener('mouseover', onNumberHover);
   });
 }
