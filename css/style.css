@@ -36,6 +36,20 @@ h1 {
 h2 {
     font-family: 'Ladi';
     font-size: 4rem;
+    left: 0%;
+    top: -15%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    animation: spin 6s infinite linear;
+    
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
 }
 
 a {
@@ -47,6 +61,7 @@ a:hover {
     text-decoration: underline;
     font-style: italic;
     color: orangered;
+    cursor: crosshair;
 }
 
 p,
@@ -65,7 +80,30 @@ p {
 p:hover {
     filter: blur(0);
     color: black;
-    transition: all 0.5s linear;
+    transition: all 1.5s linear;
+    filter: invert(80%);
+    mix-blend-mode: difference;
+}
+
+dialog {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 3;
+}
+
+dialog img {
+  max-width: 50%;
+  max-height: 70%;
 }
 
 /*
@@ -118,10 +156,10 @@ GRID
 
   .grid--about img {
     position: absolute;
-    top: 20%;
-    left: 70%;
+    top: 1%;
+    left: 60%;
     z-index: 1;
-    width: 200px;
+    width: 150px;
     height: auto;
   }  
 
@@ -130,7 +168,7 @@ GRID
     grid-column-start: 1;
     grid-column-end: 6;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
     position: relative;
     z-index: 2;
   } 
@@ -145,7 +183,8 @@ GRID
     display: flex;
   }
   
-  .grid__image img {
+  .grid__image img,
+  .grid__video video {
     /*filter: grayscale(100%);
     opacity: 0.75;*/
     top: 0;
@@ -156,6 +195,8 @@ GRID
     height: 100%;
     object-fit: cover;
     object-position: center;
+    cursor: crosshair;
+    transition: all 0.1s linear;
   }
   
   .grid__image:nth-of-type(1) {
@@ -163,7 +204,7 @@ GRID
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
-    background: ;
+
   }
   
   .grid__image:nth-of-type(2) {
@@ -190,6 +231,15 @@ GRID
     background: pink;
   }
 
+  .grid__video {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 8;
+    background: aquamarine;
+  }
+
+
 /*
 IMAGE
 */
@@ -197,4 +247,21 @@ IMAGE
 .image {
 width: 100%;
 height: auto;
+}
+
+/*
+CLOSE
+*/
+
+.close {
+ position: fixed;
+ z-index: 4;
+ top: 0;
+ right: 0;
+ padding: 2rem;
+ font-size: 2rem;
+ font-weight: bold;
+ font-family: sans-serif;
+ cursor: pointer;
+ display: none;
 }
