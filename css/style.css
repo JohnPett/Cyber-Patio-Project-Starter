@@ -73,8 +73,7 @@ dialog {
   height: 4rem;
   border-radius: 50%;
   position: absolute;
-  transform: translate(calc(1.03px * var(--mouse-x)), calc(1.03px * var(--mouse-y)))
-    translate(-50%, -50%);
+  transform: translate(calc(1.05px * var(--mouse-x)), calc(1.05px * var(--mouse-y)));
   background: pink;
   mix-blend-mode: difference;
 }
