@@ -1,8 +1,25 @@
 function init() {
   const dialog = document.querySelector('dialog');
   const close = document.querySelector('.close');
-  const square = document.querySelector('.grid__square');
-  const circle = document.querySelector('.grid__circle');
+  const square1 = document.querySelector('.grid__square-one');
+  const circle1 = document.querySelector('.grid__circle-one');
+  const square2 = document.querySelector('.grid__square-two');
+  const circle2 = document.querySelector('.grid__circle-two');
+
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
 
   function onCloseClick() {
     dialog.innerHTML = '';
@@ -28,11 +45,12 @@ function init() {
     close.style.display = 'block';
   }
 
-  function onScroll(event) {
+  function onScroll() {
     const windowHeight = window.innerHeight;
-    console.log(window.pageYOffset);
-    square.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.5)}px) scale(${window.pageYOffset * 0.01})`;
-    circle.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.75)}px) scale(${window.pageYOffset * 0.005})`;
+    square1.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.5)}px) scaleY(${window.pageYOffset * 0.01})`;
+    circle1.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.75)}px) scale(${window.pageYOffset * 0.005})`;
+    square2.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.5)}px) scale(${window.pageYOffset * 0.01})`;
+    circle2.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.75)}px) scale(${window.pageYOffset * 0.05})`;
   }
   
   function addEventListeners() {
