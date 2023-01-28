@@ -1,6 +1,8 @@
 function init() {
   const dialog = document.querySelector('dialog');
   const close = document.querySelector('.close');
+  const square = document.querySelector('.grid__square');
+  const circle = document.querySelector('.grid__circle');
 
   function onCloseClick() {
     dialog.innerHTML = '';
@@ -8,14 +10,14 @@ function init() {
     close.style.display = 'none';
   }
   
-  function onImageClick(event) { // On each image clicked give me the corresponding event
-    const src = event.currentTarget.getAttribute('src'); // Grabbing the source of the image clicked
-    const img = new Image(); // Create HTML <img> tag with JS
-    img.onload = function() { // Once my image has loaded...
-      dialog.innerHTML = `<img src="${img.src}" />`;  // Go find the <dialog> previously defined above
-      dialog.style.display = 'flex'; // Show the hidden dialog box
+  function onImageClick(event) {
+    const src = event.currentTarget.getAttribute('src');
+    const img = new Image();
+    img.onload = function() {
+      dialog.innerHTML = `<img src="${img.src}" />`;
+      dialog.style.display = 'flex';
     }
-    img.src = src; // Define the src attribute of the <img src="_image_source_" />
+    img.src = src;
     close.style.display = 'block';
   }
 
@@ -25,16 +27,24 @@ function init() {
     dialog.style.display = 'flex';
     close.style.display = 'block';
   }
+
+  function onScroll(event) {
+    const windowHeight = window.innerHeight;
+    console.log(window.pageYOffset);
+    square.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.5)}px) scale(${window.pageYOffset * 0.01})`;
+    circle.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.75)}px) scale(${window.pageYOffset * 0.005})`;
+  }
   
   function addEventListeners() {
     const videos = [...document.querySelectorAll('video')];
-    const images = [...document.querySelectorAll('img')]; // Query the whole document for imgs, then put them in an array
-    images.forEach(image => image.addEventListener('click', onImageClick)); // For each image, create a unique 'click' event
+    const images = [...document.querySelectorAll('img')];
+    images.forEach(image => image.addEventListener('click', onImageClick));
     videos.forEach(video => video.addEventListener('click', onVideoClick));
     close.addEventListener('click', onCloseClick);
+    window.addEventListener('scroll', onScroll);
   }
 
-  addEventListeners(); // I'm loaded, now add events to HTML elements
+  addEventListeners();
 }
 
-document.addEventListener("DOMContentLoaded", init); // Once all HTML has loaded, fire an event called init()
+document.addEventListener("DOMContentLoaded", init);
