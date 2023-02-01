@@ -20,6 +20,7 @@ body {
   font-weight: bold;
   font-size: 3rem;
   line-height: 4rem;
+  padding-top: 10rem;
 }
 
 h1 {
@@ -39,6 +40,15 @@ a:hover {
 img {
   width: 100%;
   height: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  border-bottom: 3px dashed black;
+  padding: 2rem 0 2rem;
 }
 
 dialog {
@@ -65,6 +75,11 @@ dialog video {
   object-position: center;
 }
 
+audio {
+  display: none;
+  visibility: none;
+}
+
 /*
   LOGO
 */
@@ -83,15 +98,39 @@ dialog video {
   align-items: center;
 }
 
-.menu ul {
+.menu__primary {
   display: flex;
   list-style: none;
 }
 
-.menu li {
-  margin-left: 2rem;
+.menu__secondary {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 2px solid black;
+}
+
+.menu__primary-list {
+  margin-left: 6rem;
   font-size: 2rem;
   line-height: 3rem;
+  position: relative;
+}
+
+.menu__primary-list:hover .menu__secondary {
+  display: block;
+}
+
+.menu__secondary {
+  margin: 0;
+  padding: 1rem 3rem;
+  box-shadow: 5px 5px black;
+}
+
+.menu__secondary-list {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
 }
 
 /*
@@ -280,4 +319,25 @@ dialog video {
   font-weight: bold;
   cursor: pointer;
   display: none;
+}
+
+/*
+  PLAYER
+*/
+
+.player {
+  width: 90vw;
+  margin: 10vw;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.player__progress {
+  background: blue;
+  width: 0;
+  height: 20px;
+  display: block;
+  transition-property: width;
+  transition-timing-function: linear;
 }

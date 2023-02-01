@@ -9,12 +9,27 @@
   </head>
   <body>
     <header class="grid grid--header">
-      <h1 class="logo">Anthropo<i>scenic</i></h1>
+      <h1 class="logo"><a href="index.html">Anthropo<i>scenic</i></a></h1>
       <nav class="menu">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="menu__primary">
+          <li class="menu__primary-list">
+            <a href="about.html">About</a>
+          </li>
+          <li class="menu__primary-list">
+            <a href="work.html">Work</a>
+            <ul class="menu__secondary">
+              <li class="menu__secondary-list">
+                <a href="project.html">Project</a>
+              </li>
+              <li class="menu__secondary-list">
+                <a href="project.html">Project</a>
+              </li>
+              <li class="menu__secondary-list">
+                <a href="project.html">Project</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu__primary-list"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -44,19 +59,29 @@
           </video>
         </div>
       </section>
-      <section class="grid grid--background">
+      <!-- <section class="grid grid--background">
         <div class="grid__circle-one"></div>
         <div class="grid__square-one"></div>
       </section>
       <section class="grid grid--foreground">
         <div class="grid__circle-two"></div>
         <div class="grid__square-two"></div>
-      </section>
+      </section> -->
     </main>
     <footer class="grid grid--contact" id="contact">
       <a href="mailto:email@johnpett.com" target="_blank">email@johnpett.com</a>
     </footer>
     <dialog></dialog>
     <div class="close">X</div>
+    <div class="player">
+      <div class="player__play-button">PLAY</div>
+      <div class="player__progress"></div>
+      <audio class="player__track">
+        <source src="sound/track.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <audio class="click">
+      <source src="sound/click.mp3" type="audio/mpeg">
+    </audio>
   </body>
 </html>
