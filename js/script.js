@@ -81,7 +81,7 @@ function init() {
     close.addEventListener('click', onCloseClick);
     playButton.addEventListener('click', onPlayClick);
     playerTrack.addEventListener('canplay', onTrackCanPlay);
-    // window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll);
   }
 
   addEventListeners();
