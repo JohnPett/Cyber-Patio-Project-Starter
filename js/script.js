@@ -13,21 +13,6 @@ function init() {
   const playButton = document.querySelector('.player__play-button');
   const playerProgress = document.querySelector('.player__progress');
 
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
-
   function onCloseClick() {
     dialog.innerHTML = '';
     dialog.style.display = 'none';
@@ -68,19 +53,22 @@ function init() {
 
   function onPlayClick() {
     if (isPlaying) {
-      playerTrack.pause();
+      playerTrack.load();
       playButton.innerHTML = 'PLAY';
+      playerProgress.style.width = '0px';
     } else {
       playerTrack.play();
       playButton.innerHTML = 'PAUSE';
-      playerProgress.style.trasitionDuration = `${duration}s`;
+      playerProgress.style.transitionDuration = `${duration}s`;
       playerProgress.style.width = '100%';
     }
     isPlaying = !isPlaying;
   }
 
   function onTrackCanPlay() {
-    duration = playerTrack.duration * 0.1;
+    console.log('can play');
+    duration = playerTrack.duration;
+    console.log(duration);
   }
   
   function addEventListeners() {

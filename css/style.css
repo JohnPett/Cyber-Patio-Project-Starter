@@ -326,18 +326,23 @@ audio {
 */
 
 .player {
-  width: 90vw;
-  margin: 10vw;
   border: 3px solid black;
-  display: flex;
-  align-items: center;
+  gap: 1rem;
+}
+
+.player__play-button {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  text-align: center;
 }
 
 .player__progress {
   background: blue;
   width: 0;
-  height: 20px;
+  height: 100%;
   display: block;
   transition-property: width;
   transition-timing-function: linear;
+  grid-column-start: 2;
+  grid-column-end: 7;
 }
