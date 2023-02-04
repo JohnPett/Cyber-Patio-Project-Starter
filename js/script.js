@@ -1,69 +1,38 @@
 function init() {
-  const dialog = document.querySelector('dialog');
-  const close = document.querySelector('.close');
-  const square1 = document.querySelector('.grid__square-one');
-  const circle1 = document.querySelector('.grid__circle-one');
-  const square2 = document.querySelector('.grid__square-two');
-  const circle2 = document.querySelector('.grid__circle-two');
+  const logo = document.querySelector('.logo');
+  const main = document.querySelector('main');
 
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var contect = this, args = arguments;
-      var later = function () {
-        timeout = null;
-        if (callNow) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
-  
-  
-  function onCloseClick() {
-    dialog.innerHTML = '';
-    dialog.style.display = 'none';
-    close.style.display = 'none';
-  }
-  
-  function onImageClick(event) {
-    const src = event.currentTarget.getAttribute('src');
-    const img = new Image();
-    img.onload = function() {
-      dialog.innerHTML = `<img src="${img.src}" />`;
-      dialog.style.display = 'flex';
-    }
-    img.src = src;
-    close.style.display = 'block';
-  }
+  (function hideBanner() {
+    const banner = document.querySelector('.banner');
+    setTimeout(function() {
+      banner.style.opacity = 0;
+    }, 20000);
+  })();
 
-  function onVideoClick(event) {
-    const src = event.currentTarget.querySelector('source').getAttribute('src');
-    dialog.innerHTML = `<video autoplay loop muted playsinline><source src="${src}" type="video/mp4"></video>`;
-    dialog.style.display = 'flex';
-    close.style.display = 'block';
-  }
+  (function animateLogo() {
+    logo.animate([
+      { transform: 'scale(0)' },
+      { transform: 'scale(1)' }
+    ], {
+      duration: 400,
+      iterations: 1
+    });
+  })();
 
   function onScroll() {
-    const windowHeight = window.innerHeight;
-    square1.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.5)}px) scale(${window.pageYOffset * 0.05})`;
-    circle1.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1)}px) scale(${window.pageYOffset * 0.01})`;
-    square2.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.5)}px) scale(${window.pageYOffset * 0.01})`;
-    circle2.style.transform = `translateY(${windowHeight - (window.pageYOffset * 1.5)}px) scale(${window.pageYOffset * 0.01})`;
-  }
-  
-  function addEventListeners() {
-    const videos = [...document.querySelectorAll('video')];
-    const images = [...document.querySelectorAll('img')];
-    images.forEach(image => image.addEventListener('click', onImageClick));
-    videos.forEach(video => video.addEventListener('click', onVideoClick));
-    close.addEventListener('click', onCloseClick);
-    window.addEventListener('scroll', onScroll);
+    const pageY = window.pageYOffset * 0.01;
+    if (window.pageYOffset > 20 && pageY > 1) {
+      logo.style.transform = `scale(${pageY})`;
+      logo.style.opacity = 1;
+      main.style.opacity = 0;
+    }
+    if (pageY > 5) {
+      logo.style.opacity = 0;
+      main.style.opacity = 1;
+    }
   }
 
-  addEventListeners();
+  window.addEventListener('scroll', onScroll);
 }
 
 document.addEventListener("DOMContentLoaded", init);
