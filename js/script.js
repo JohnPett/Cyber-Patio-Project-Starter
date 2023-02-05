@@ -13,15 +13,14 @@ function init() {
   })();
 
   function onScroll() {
-    const pageY = window.pageYOffset * 0.01;
-    if (window.pageYOffset > 20 && pageY > 1) {
-      logo.style.transform = `scale(${pageY})`;
-      logo.style.opacity = 1;
-      main.style.opacity = 0;
-    }
-    if (pageY > 5) {
-      logo.style.opacity = 0;
+    if (window.pageYOffset > 20) {
       main.style.opacity = 1;
+      logo.style.transform = 'scale(5)';
+      logo.style.opacity = 0;
+    } else {
+      main.style.opacity = 0;
+      logo.style.transform = 'scale(1)';
+      logo.style.opacity = 1;
     }
   }
 
