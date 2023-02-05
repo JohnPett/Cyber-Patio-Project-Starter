@@ -2,13 +2,6 @@ function init() {
   const logo = document.querySelector('.logo');
   const main = document.querySelector('main');
 
-  (function hideBanner() {
-    const banner = document.querySelector('.banner');
-    setTimeout(function() {
-      banner.style.opacity = 0;
-    }, 20000);
-  })();
-
   (function animateLogo() {
     logo.animate([
       { transform: 'scale(0)' },

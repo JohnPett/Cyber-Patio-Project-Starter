@@ -159,16 +159,23 @@ p {
   transition: opacity 0.1s linear;
 }
 
-.banner__image {
-  background: url('../img/welcome-tribal.png') repeat-x left center;
+.banner__inner {
+  width: 200vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   height: inherit;
-  animation: banner 40s infinite linear;
-  width: 1000vw;
+  animation: banner 10s infinite linear;
+}
+
+.banner__image {
+  background: url('../img/welcome-tribal.png') no-repeat center;
+  height: inherit;
+  background-size: contain;
 }
 
 @keyframes banner {
   from {transform: translateX(0)}
-  to {transform: translateX(-1000vw)}
+  to {transform: translateX(-100vw)}
 }
 
 /*
