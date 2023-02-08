@@ -4,69 +4,62 @@
     <title>Francis Studio</title> <!-- title that appears in both search engines and the browser tab -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- set viewport for devices and zoom level -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!-- define where our styles are -->
     <script type="text/javascript" src="js/script.js"></script> <!-- define where our javascript is -->
     <link rel="stylesheet" href="https://use.typekit.net/cde7pgo.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
 
     <div class="follower"></div>
 
     <header class="grid grid--header">
-    <h1 class="logo"><span>FRANCIS</span> <span>STUDIO</span></h1>
-    <nav class="menu">
-      <ul>
-          <li><a href=#about>About</a></li>
-          <li><a href=#>Work</a></li>
-          <li><a href=#contact>Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
+       <div class="logo">FRANCIS  STUDIO</div>
+       <div class="services">Selected Projects</div>
+       <nav class="menu">
+        <ul>
+            <li><a href=#about>WORK</a></li>
+            <li><a href=#>ABOUT</a></li>
+            <li><a href=#contact>CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
   <main>
-  <section class="grid grid--about" id="about">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Vestibulum dictum vulputate erat, non finibus massa cursus non. 
-      Morbi lorem turpis, sagittis sed fermentum tempor, finibus non nibh. 
-      Vivamus lacinia cursus ultrices. Aenean pulvinar arcu semper metus tincidunt imperdiet. 
-      Mauris tristique libero vitae libero aliquet, et fringilla dui laoreet.</p>
-  </section>
 
-<section class="grid grid--gallery">
+    <!-- Slider main container -->
+    <div class="swiper swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+          <!-- Slides -->
+        <div class="swiper-slide">
+            <img src="img/01.jpg" />
+            <div class="grid grid--project-info">
+              <div class="grid--project-info__text">
+              <p>GIGI</p>
+              </div>
+              <div class="grid--project-info__text">
+                <p>STUDIOS</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="img/02.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/03.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="img/04.jpg" />
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
 
-  <div class="grid__image">
-    <img src="img/18.jpg" />
-  </div>
-
-  <div class="grid__image">
-    <img src="img/02.jpg" />
-  </div>
-
-  <div class="grid__image">
-    <img src="img/03.jpg" />
-  </div>
-
-
-  <div class="grid__image">
-    <img src="img/04.jpg" />
-  </div>
-
-  <div class="grid__image">
-    <img src="img/05.jpg" />
-  </div>
-
-  <div class="grid__video">
-    <video autoplay loop muted playsinline>
-      <source src="video/01.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
-</main>
-
-<footer class="grid grid--contact" id="contact">
-  <a href="mailto:contact@byfrancis.pt" target="_blank">contact@byfrancis.pt</a>
-</footer>
-<dialog></dialog>
-<div class="close">X</div>
+  </main>
   </body>
-</html>
+    
+
+
+

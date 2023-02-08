@@ -21,7 +21,7 @@ html {
 
 a {
     text-decoration: none;
-    color: black
+    color: white
 } 
 
 a:hover {
@@ -31,12 +31,20 @@ a:hover {
 
 h1 {
     font-size: 2rem;
+    color: white;
 } 
 
 p,
 a {
   font-size: 1.4rem;
   line-height: 2rem;
+  color: white;
+}
+
+header {
+  background: black;
+  outline: 1px;
+  outline-color: white;
 }
 
 dialog {
@@ -68,11 +76,11 @@ dialog {
 */
 
 .follower {
-  z-index: 1;
+  z-index: 999;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  position: absolute;
+  position: fixed;
   transform: translate(calc(1.05px * var(--mouse-x)), calc(1.05px * var(--mouse-y)));
   background: pink;
   mix-blend-mode: difference;
@@ -84,13 +92,12 @@ dialog {
 
 .menu {
     font-size: 1.5rem;
+    color: white;
     display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 60px;
+    align-items: right;
+    position: relative;
+    grid-column-start: 3;
+    grid-column-end: 4;
 } 
 
 .menu ul {
@@ -101,6 +108,7 @@ dialog {
 .menu li {
     line-height: 4rem;
 }
+
 
 .menu li:nth-child(2) {
   margin: 0 2rem;
@@ -115,18 +123,30 @@ dialog {
 
 .logo {
     font-family: nimbus-sans, sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     font-style: normal;
     text-transform: uppercase;
-    font-size: 4rem;
-    line-height: 6rem;
-    letter-spacing: -0.1rem;
-    white-space: nowrap;
+    font-size: 2rem;
+    line-height: 2rem;
     grid-column-start: 1;
-    grid-column-end: 7;
+    grid-column-end: 2;
     display: flex;
-    justify-content: space-between;
-    text-align: justify;
+    text-align: left;
+    color: white;
+} 
+
+.service {
+  font-family: nimbus-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  text-align: center;
+  color: white;
 } 
 
 
@@ -143,13 +163,14 @@ dialog {
 .grid--header {
     grid-template-columns: repeat(3,1fr);
     position: relative;
+    align-items: center;
 }
 
-.grid--about p{ 
-    grid-column-start: 2;
-    grid-column-end: 5;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+/*
+.grid--project h1{ 
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(4,1fr);
+    position: relative;
 }
 
 .grid--contact {
@@ -163,88 +184,84 @@ dialog {
 }
     
 
-.grid--gallery {
-    grid-template-rows: repeat(12,1fr);
-}
-
-
 /*
-    IMAGE
+    SWIPER
 */
 
-.grid__image {
-    position: relative;
-    display: flex;
-  }
-
-.grid__image img,
-.grid__video video {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-.grid__image:hover img,
-.grid__video:hover video {
-  opacity: 1;
-  filter: grayscale(50%);
-  mix-blend-mode: exclusion;
-  background-color: pink;
+.swiper-container {
+  width: 100vw;
+  height: 100vh;
 }
-  
-  .grid__image:nth-of-type(1) {
-    grid-column-start: 1;
-    grid-column-end:3;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    background: red;
-  }
 
-  .grid__image:nth-of-type(2) {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    background: red;
-  }
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
 
-  
-  .grid__image:nth-of-type(3) {
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    background: teal;
-  }
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
 
-  .grid__image:nth-of-type(4) {
-    grid-column-start: 6;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    background: red;
-  }
+.grid--project-info{
+  width: 100%;
+  height: 100%;
+  margin: 4rem;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(4,1fr);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 4;
+  opacity: 0;
+}
 
-  .grid__image:nth-of-type(5) {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 5;
-    background: teal;
-  }
+.grid--project-info:hover {
+  opacity: 1;
+  transition: ease-in;
+  mix-blend-mode: difference;
+}
 
-  .grid__video {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 5;
-    grid-row-end: 7;
-    background: plum;
-  }
+.grid--project-info__text {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.grid--project-info p {
+  font-family: nimbus-sans, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 15vw;
+  line-height: 75%;
+  letter-spacing: -1vw;
+  display: block;
+  text-align: left;
+  color: pink;
+}
+
+.grid--project-info__text:nth-of-type(1) {
+  grid-column-start: 1;
+  grid-column-end:3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.grid--project-info__text:nth-of-type(2) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+
+
+
 
 
 /*
