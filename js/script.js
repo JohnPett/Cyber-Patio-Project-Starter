@@ -44,13 +44,32 @@ function init() {
 
   // SWIPER
 
-  var swiper = new Swiper('.swiper-container', {
+  new Swiper('.swiper-container-vertical', {
     direction: 'vertical',
     mousewheel: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
       hide:false,
+    },
+  });
+
+  new Swiper('.swiper-container-vertical', {
+    direction: 'vertical',
+    mousewheel: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      hide:false,
+    },
+  });
+  
+  new Swiper('.swiper-container-horizontal', {
+    direction: 'horizontal',
+    mousewheel: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 

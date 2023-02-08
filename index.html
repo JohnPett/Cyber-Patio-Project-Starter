@@ -1,14 +1,14 @@
-<!doctype html> <!-- defining the document type html5 -->
-<html> <!-- root element in the DOM (doucument object model) -->
-  <head> <!-- non-visable in the browser metadata for the wesbite -->
-    <title>Francis Studio</title> <!-- title that appears in both search engines and the browser tab -->
+<!doctype html>
+<html>
+  <head>
+    <title>Francis Studio</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- set viewport for devices and zoom level -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css"> <!-- define where our styles are -->
-    <script type="text/javascript" src="js/script.js"></script> <!-- define where our javascript is -->
-    <link rel="stylesheet" href="https://use.typekit.net/cde7pgo.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/cde7pgo.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body>
 
@@ -28,7 +28,7 @@
       </div>
     </header>
   <main>
-    <div class="swiper swiper-container">
+    <div class="swiper swiper-container-vertical">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="img/01.jpg" />
@@ -61,7 +61,36 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
-
+    <dialog>
+      <div class="close">X</div>
+      <h3>Project title</h3>
+      <div class="swiper swiper-container-horizontal">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/04.jpg" />
+            <cite>Art direction by Malva Sawada<br>Directed by Maria Sosa</cite>
+            <h4>Summary copy</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/03.jpg" />
+            <cite>Art direction by Malva Sawada<br>Directed by Maria Sosa</cite>
+            <h4>Summary copy</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/02.jpg" />
+            <cite>Art direction by Malva Sawada<br>Directed by Maria Sosa</cite>
+            <h4>Summary copy</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/01.jpg" />
+            <cite>Art direction by Malva Sawada<br>Directed by Maria Sosa</cite>
+            <h4>Summary copy</h4>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </dialog>
   </main>
   </body>
     
