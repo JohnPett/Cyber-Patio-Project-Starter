@@ -277,6 +277,7 @@ dialog {
   align-items: center;
   justify-content: center;
   z-index: 99999;
+  display: none;
 }
 
 dialog h3 {
@@ -340,6 +341,14 @@ dialog .swiper-button-prev {
   z-index: 99999;
   font-size: 2rem;
   cursor: pointer;
+}
+
+.counter {
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 4rem;
+  color: #FFBAD3;
+  z-index: 99999;
 }
 
  

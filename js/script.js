@@ -1,46 +1,51 @@
 function init() {
   const dialog = document.querySelector('dialog');
   const close = document.querySelector('.close');
-  const main = document.querySelector('main');
   const follower = document.querySelector('.follower');
+  const projects = [...document.querySelectorAll('.swiper-container-vertical .swiper-slide')];
+
+  const onProjectClick = () => dialog.style.display = 'block';
+  const onCloseClick = () => dialog.style.display = 'none';
+
+  projects.forEach(project => project.addEventListener('click', onProjectClick));
+  close.addEventListener('click', onCloseClick);
+
+  // MOUSE FOLLOW
+
+  // 0.01 : 0.35
+  let acceleration = 0.1;
+
+  // Just for initial positioning
+  let x = currX = innerWidth / 2;
+  let y = currY = innerHeight / 2;
 
 
-    // MOUSE FOLLOW
+  // Store the mouse position 
+  document.addEventListener('mousemove', event => {
+    let e = event.touches ? event.touches[0] : event;
+    x = e.clientX;
+    y = e.clientY;
+  });
 
-    // 0.01 : 0.35
-    let acceleration = 0.1;
+  const update = (elm, prop, val) => {
+    elm.style.setProperty(prop, val);
+  };
 
-    // Just for initial positioning
-    let x = currX = innerWidth / 2;
-    let y = currY = innerHeight / 2;
+  const lerp = (_new, _old) => {
+    return (_new += (_old - _new) * acceleration);
+  };
 
+  const animate = () => {
+    currX = lerp(currX, x);
+    currY = lerp(currY, y);
 
-    // Store the mouse position 
-    document.addEventListener('mousemove', event => {
-      let e = event.touches ? event.touches[0] : event;
-      x = e.clientX;
-      y = e.clientY;
-    });
+    update(follower, '--mouse-x', currX);
+    update(follower, '--mouse-y', currY);
 
-    const update = (elm, prop, val) => {
-      elm.style.setProperty(prop, val);
-    };
+    requestAnimationFrame(animate);
+  };
 
-    const lerp = (_new, _old) => {
-      return (_new += (_old - _new) * acceleration);
-    };
-
-    const animate = () => {
-      currX = lerp(currX, x);
-      currY = lerp(currY, y);
-
-      update(follower, '--mouse-x', currX);
-      update(follower, '--mouse-y', currY);
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
+  animate();
 
   // SWIPER
 
@@ -54,7 +59,7 @@ function init() {
     },
   });
 
-  new Swiper('.swiper-container-vertical', {
+  const vertical = new Swiper('.swiper-container-vertical', {
     direction: 'vertical',
     mousewheel: true,
     pagination: {
@@ -64,7 +69,7 @@ function init() {
     },
   });
   
-  new Swiper('.swiper-container-horizontal', {
+  const horizontal = new Swiper('.swiper-container-horizontal', {
     direction: 'horizontal',
     mousewheel: true,
     navigation: {
@@ -73,11 +78,15 @@ function init() {
     },
   });
 
-  // function onCloseClick() {
-  //   dialog.innerHTML = '';
-  //   dialog.style.display = 'none';
-  //   close.style.display = 'none';
-  // }
+  const current = document.querySelector('.counter__current');
+  const total = document.querySelector('.counter__total');
+  const imagesLength = [...document.querySelectorAll('.swiper-container-horizontal img')].length;
+
+  total.innerHTML = imagesLength;
+
+  horizontal.on('activeIndexChange', function(event) {
+    current.innerHTML = event.activeIndex + 1;
+  });
 
   // function onImageClick(event) { // On each image clicked give me the corresponding event
   //   const src = event.currentTarget.getAttribute('src'); // Grabbing the source of the image clicked
