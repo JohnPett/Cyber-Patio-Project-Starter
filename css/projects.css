@@ -66,21 +66,28 @@ body {
   font-weight: bold;
   font-size: 3rem;
   line-height: 4rem;
-  background: url(../img/pinky-blu.svg) bottom no-repeat;
-  background-size: cover;
+  background: url(../img/pinky.svg) top no-repeat;
+ 
 }
 
 main {
-  padding-top: 20rem;
+  padding-top: 25rem;
 }
 
 h3 {
-  font-size: 4rem;
-  line-height: 5rem;
   font-family: 'Unbounded';
-  font-size: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
   /* grid-column-start: 4;
   grid-row-start: 2; */
+}
+
+h4 {
+  font-family: 'Unbounded Regular';
+  font-size: 1.875rem;
+  line-height: 2rem;
+  
 }
 
 a {
@@ -98,7 +105,8 @@ a:hover {
 p {
   font-family: 'Unbounded Light';
   font-size: 1.3rem;
-  line-height: 1.56rem;
+  line-height: 1.75rem;
+  padding-bottom: 4rem;
 }
 
 img {
@@ -224,6 +232,30 @@ audio {
   padding: 0.5rem 1rem;
 }
 
+.bottom__nav {
+  position: flex;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
 /*
   GRID
 */
@@ -236,6 +268,23 @@ audio {
 
 .grid--project {
   grid-template-columns: repeat(2, 1fr);
+  position: relative;
+}
+
+.grid__images {
+  max-height: calc(100vh - 25rem);
+  width: 90%;
+  overflow: scroll;
+}
+
+.grid__text {
+  padding-right: 2rem;
+
+}
+
+.grid__keywords {
+  display: flex;
+  justify-content: space-between;
 }
 
 .grid--gallery {
@@ -314,10 +363,7 @@ audio {
   background: aquamarine;
 } */
 
-.grid__images {
-  max-height: calc(100vh - 20rem);
-  overflow: scroll;
-}
+
 
 /*
   CLOSE
@@ -340,5 +386,5 @@ audio {
 */
 
 .worlds {
-  min-width: 150px;
+  min-width: 100px;
 }
