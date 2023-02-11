@@ -20,13 +20,29 @@
 }
 
 @font-face {
-  font-family: 'Planet Kosmos';
-  src: url('../fonts/PlanetKosmos.woff2') format('woff2'),
-      url('../fonts/PlanetKosmos.woff') format('woff');
+  font-family: 'Unbounded Light';
+  src: url('../fonts/Unbounded-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Unbounded Regular';
+  src: url('../fonts/Unbounded-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('../fonts/Unbounded-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}
+
 
 @font-face {
   font-family: 'KyivType Medium Sans';
@@ -125,6 +141,9 @@ h2 {
 a {
     color: black;
     text-decoration: none;
+    font-family: 'Unbounded';
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
 a:hover {
@@ -134,18 +153,12 @@ a:hover {
     cursor: crosshair;
 }
 
-p,
-a {
-  font-size: 1.4rem;
-  line-height: 2rem;
-  font-family: sans-serif;
-}
-
 p {
   max-width: 75ch;
-  font-family: 'KyivType Medium Sans';
+  font-family: 'Unbounded Light';
   font-size: 1.5rem;
   line-height: 1.8rem;
+  position: flex;
 }
 
 /*
@@ -177,6 +190,32 @@ p {
   from {transform: translateX(0)}
   to {transform: translateX(-100vw)}
 }
+
+/* 
+MENU
+*/
+
+.menu {
+  font-size: 1.5rem;
+  display: inline-block fixed;
+  align-items: center;
+  background-color: #F1F1F1;
+  border-style: solid;
+  height: 50px;
+}
+
+.menu ul {
+  display: flex; 
+  list-style: none;
+  float: right;
+  padding-right: 25px;
+}
+
+.menu li {
+  margin-left: 1rem;
+  line-height: 4rem;
+}
+
 
 /*
   LOGO
