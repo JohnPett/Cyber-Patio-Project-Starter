@@ -127,10 +127,10 @@ header {
   padding-right: 2rem;
 }
 
-object image {
+/* .object img {
   width: 300%;
   display: fixed;
-}
+} */
 
 dialog {
   position: fixed;
@@ -323,4 +323,12 @@ audio {
   font-weight: bold;
   cursor: pointer;
   display: none;
+}
+
+/*
+  IMAGES
+*/
+
+.worlds {
+  min-width: 150px;
 }
