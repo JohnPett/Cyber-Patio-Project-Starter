@@ -66,7 +66,7 @@ body {
   font-weight: bold;
   font-size: 3rem;
   line-height: 4rem;
-  background: url(../img/pinky.svg) top no-repeat;
+  background: url(../img/pinky-1.png) bottom no-repeat;
  
 }
 
@@ -233,10 +233,12 @@ audio {
 }
 
 .bottom__nav {
-  position: flex;
+  position: fixed;
   bottom: 0;
   display: flex;
+  width: 50vw;
   justify-content: space-between;
+  padding-right: 2rem;
 }
 
 .arrow {
@@ -275,6 +277,11 @@ audio {
   max-height: calc(100vh - 25rem);
   width: 90%;
   overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.grid__images::-webkit-scrollbar {
+  display: none;
 }
 
 .grid__text {
