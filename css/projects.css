@@ -67,7 +67,6 @@ body {
   font-size: 3rem;
   line-height: 4rem;
   background: url(../img/pinky-1.png) bottom no-repeat;
- 
 }
 
 main {
@@ -85,7 +84,7 @@ h3 {
 
 h4 {
   font-family: 'Unbounded Regular';
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   line-height: 2rem;
   
 }
@@ -99,14 +98,16 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  font-style: italic;
+  color: #00FF12;
+  cursor: crosshair;
 }
 
 p {
   font-family: 'Unbounded Light';
   font-size: 1.3rem;
   line-height: 1.75rem;
-  padding-bottom: 4rem;
+
 }
 
 img {
@@ -147,7 +148,8 @@ header {
 
 dialog {
   position: fixed;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
   top: 0;
   left: 0;
   right: 0;
@@ -184,6 +186,7 @@ audio {
   grid-column-start: 1;
   grid-column-end: 4;
   position: fixed;
+  max-width: 450px;
 }
 
 /*
@@ -234,11 +237,14 @@ audio {
 
 .bottom__nav {
   position: fixed;
-  bottom: 0;
+  bottom: 2rem;
   display: flex;
   width: 50vw;
   justify-content: space-between;
   padding-right: 2rem;
+  background-color: #F1F1F1;
+  border: 1px solid black;
+  height: 30px;
 }
 
 .arrow {
@@ -275,10 +281,11 @@ audio {
 
 .grid__images {
   max-height: calc(100vh - 25rem);
-  width: 90%;
+  width: 85%;
   overflow: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  cursor: crosshair;
 }
 .grid__images::-webkit-scrollbar {
   display: none;
@@ -294,7 +301,7 @@ audio {
   justify-content: space-between;
 }
 
-.grid--gallery {
+/*.grid--gallery {
   grid-template-rows: repeat(7, 1fr);
   gap: 2rem;
   position: relative;
@@ -321,7 +328,7 @@ audio {
   cursor: pointer;
   transition: all 0.1s linear;
 }
-
+*/
 /* .grid__image:nth-of-type(1) {
   grid-column-start: 1;
   grid-column-end: 4;
@@ -384,6 +391,7 @@ audio {
   padding: 2rem;
   font-size: 2rem;
   font-weight: bold;
+  font-family: 'Unbounded';
   cursor: pointer;
   display: none;
 }
