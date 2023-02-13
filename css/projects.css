@@ -236,8 +236,6 @@ audio {
 }
 
 .bottom__nav {
-  position: fixed;
-  bottom: 2rem;
   display: flex;
   width: 50vw;
   justify-content: space-between;
@@ -245,6 +243,7 @@ audio {
   background-color: #F1F1F1;
   border: 1px solid black;
   height: 30px;
+  align-self: flex-end;
 }
 
 .arrow {
@@ -293,7 +292,8 @@ audio {
 
 .grid__text {
   padding-right: 2rem;
-
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .grid__keywords {
