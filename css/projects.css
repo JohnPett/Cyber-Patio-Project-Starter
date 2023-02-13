@@ -386,7 +386,8 @@ audio {
 .close {
   position: fixed;
   z-index: 5;
-  top: 0;
+  top: 3rem;
+  background: pink;
   right: 0;
   padding: 2rem;
   font-size: 2rem;
