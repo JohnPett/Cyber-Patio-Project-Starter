@@ -67,6 +67,7 @@ body {
   font-size: 3rem;
   line-height: 4rem;
   background: url(../img/pinky-1.png) bottom no-repeat;
+  background-size: 100%;
 }
 
 main {
