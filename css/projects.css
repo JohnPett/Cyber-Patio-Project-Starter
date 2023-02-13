@@ -87,6 +87,7 @@ h4 {
   font-family: 'Unbounded Regular';
   font-size: 1.5rem;
   line-height: 2rem;
+  padding-top: 5rem;
   
 }
 
@@ -108,7 +109,6 @@ p {
   font-family: 'Unbounded Light';
   font-size: 1.3rem;
   line-height: 1.75rem;
-
 }
 
 img {
@@ -209,14 +209,15 @@ audio {
   display: none;
   position: absolute;
   background: white;
-  border: 2px solid black;
+  border: 1px solid black;
+  list-style: none;
 }
 
 .menu__primary-list {
   margin-left: 1rem;
   margin-right: 2rem;
   font-size: 2rem;
-  line-height: 3rem;
+  line-height: 2rem;
   position: relative;
 }
 
@@ -226,8 +227,9 @@ audio {
 
 .menu__secondary {
   margin: 0;
-  padding: 1rem 3rem;
-  box-shadow: 5px 5px black;
+  padding: 2rem 2rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
 }
 
 .menu__secondary-list {
@@ -240,10 +242,12 @@ audio {
   display: flex;
   width: 50vw;
   justify-content: space-between;
+  align-items: center;
   padding-right: 2rem;
+  padding-left: 2rem;
   background-color: #F1F1F1;
   border: 1px solid black;
-  height: 30px;
+  height: 40px;
   align-self: flex-end;
   position: absolute;
   bottom: 2rem;
@@ -251,7 +255,7 @@ audio {
 
 .arrow {
   border: solid black;
-  border-width: 0 1px 1px 0;
+  border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
 }
