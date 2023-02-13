@@ -244,6 +244,8 @@ audio {
   border: 1px solid black;
   height: 30px;
   align-self: flex-end;
+  position: absolute;
+  bottom: 2rem;
 }
 
 .arrow {
@@ -294,6 +296,7 @@ audio {
   padding-right: 2rem;
   display: flex;
   flex-flow: column wrap;
+  position: relative;
 }
 
 .grid__keywords {
