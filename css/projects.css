@@ -149,7 +149,7 @@ header {
 
 dialog {
   position: fixed;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
   top: 0;
   left: 0;
@@ -294,11 +294,23 @@ audio {
   cursor: crosshair;
 }
 .grid__images::-webkit-scrollbar {
-  display: none;
-}
+    width: 10px;
+    background-color: #F1F1F1;
+  }
+  
+.grid__images::-webkit-scrollbar-track
+  {
+    border: 1px solid black;
+    background-color: #F1F1F1;
+  }
+.grid__images::-webkit-scrollbar-thumb
+  {
+    background-color: #000000;	
+  }
+  
 
 .grid__text {
-  padding-right: 2rem;
+  padding-right: 3rem;
   display: flex;
   flex-flow: column wrap;
   position: relative;
@@ -394,14 +406,13 @@ audio {
 .close {
   position: fixed;
   z-index: 5;
-  top: 3rem;
-  background: pink;
+  top: 3.5rem;
   right: 0;
   padding: 2rem;
   font-size: 2rem;
   font-weight: bold;
   font-family: 'Unbounded';
-  cursor: pointer;
+  cursor: crosshair;
   display: none;
 }
 
