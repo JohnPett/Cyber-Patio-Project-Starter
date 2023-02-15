@@ -244,7 +244,7 @@ audio {
 
 .bottom__nav {
   display: flex;
-  width: 50vw;
+  width: calc(50vw - 4rem);
   justify-content: space-between;
   align-items: center;
   padding-right: 2rem;
@@ -310,12 +310,19 @@ audio {
   }
 .grid__images::-webkit-scrollbar-thumb
   {
-    background-color: #000000;	
-  }
+    background-color: #00FF12;
+    border: 1px solid black;
+    /*background-image: -webkit-gradient(linear,
+                         left bottom,
+                         left top,
+                         color-stop(0.33, #95B9FF),
+                         color-stop(0.66, #FFD0FC),
+                         color-stop(0.99, #00FF12));*/
+    }
   
 
 .grid__text {
-  padding-right: 3rem;
+  padding-right: 4rem;
   display: flex;
   flex-flow: column wrap;
   position: relative;
