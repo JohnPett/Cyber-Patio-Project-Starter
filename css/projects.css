@@ -143,6 +143,9 @@ header {
   padding-right: 2rem;
 }
 
+.object video {
+  mix-blend-mode: hard-light;
+}
 /* .object img {
   width: 300%;
   display: fixed;
@@ -150,7 +153,7 @@ header {
 
 dialog {
   position: fixed;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(6px);
   top: 0;
   left: 0;
@@ -292,6 +295,7 @@ audio {
   overflow: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  overflow-x: hidden;
   cursor: crosshair;
 }
 .grid__images::-webkit-scrollbar {
@@ -423,4 +427,10 @@ audio {
 
 .worlds {
   min-width: 100px;
+}
+
+
+.testneu {
+  min-width: 100px;
+  mix-blend-mode: hard-light;
 }

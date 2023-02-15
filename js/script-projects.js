@@ -23,7 +23,7 @@ function init() {
 
   function onVideoClick(event) {
     const src = event.currentTarget.querySelector('source').getAttribute('src');
-    dialog.innerHTML = `<video autoplay loop muted playsinline><source src="${src}" type="video/mp4"></video>`;
+    dialog.innerHTML = `<video autoplay loop muted playsinline controls><source src="${src}" type="video/mp4"></video>`;
     dialog.style.display = 'flex';
     close.style.display = 'block';
   }
