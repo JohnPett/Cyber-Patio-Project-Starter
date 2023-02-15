@@ -89,13 +89,18 @@ main {
 }
 
 section {
-  height: 50vh;
+  /*height: 50vh;*/
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  width: 100vw;
+  width: 90vw;
   flex-flow: column wrap;
   position: relative;
+  background-color: #F1F1F1;
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  padding-left: 2rem;
+  padding-top: 2rem;
 }
 
 section:after {
@@ -115,10 +120,12 @@ section:nth-child(2n):after {
 }
 
 section h3 {
-  font-size: 5rem;
-  font-family: 'Ladi Dense';
+  font-size: 1.875rem;
+  line-height: 2rem;
+  padding-bottom: 4rem;
+  font-family: 'Unbounded';
   text-transform: uppercase;
-  position: absolute;
+  position: flex;
   top: 0;
   left: 6vw;
 }
@@ -127,8 +134,8 @@ h1 {
     font-size: 2rem;
 }
 
-h2 {
-    font-family: 'Ladi';
+/*h3 {
+    font-family: 'Unbounded';
     font-size: 4rem;
     left: 0%;
     top: -15%;
@@ -136,7 +143,7 @@ h2 {
     position: absolute;
     animation: spin 6s infinite linear;
     
-}
+}*/
 
 a {
     color: black;
@@ -156,8 +163,8 @@ a:hover {
 p {
   max-width: 75ch;
   font-family: 'Unbounded Light';
-  font-size: 1.5rem;
-  line-height: 1.8rem;
+  font-size: 1.3rem;
+  line-height: 1.75rem;
   position: flex;
 }
 
