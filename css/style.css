@@ -187,11 +187,17 @@ p {
   animation: banner 10s infinite linear;
 }
 
-.banner__image {
+.banner__text {
+  position: flex;
+  font-family: 'Unbounded';
+  font-size: 1.5rem;
+
+}
+/*.banner__image {
   background: url('../img/welcome-tribal.png') no-repeat center;
   height: inherit;
   background-size: contain;
-}
+}*/
 
 @keyframes banner {
   from {transform: translateX(0)}
