@@ -1,289 +1,39 @@
-/*
-  FONT
-*/
-
-@font-face {
-    font-family: 'Ladi Gross';
-    src: url('../fonts/Ladi-Gross.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
-
-@font-face {
-  font-family: 'Ladi Dense';
-  src: url('../fonts/Ladi-Dense.woff2') format('woff2'),
-      url('../fonts/Ladi-Dense.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Unbounded Light';
-  src: url('../fonts/Unbounded-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Unbounded Regular';
-  src: url('../fonts/Unbounded-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Unbounded';
-  src: url('../fonts/Unbounded-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: block;
-}
-
-
-@font-face {
-  font-family: 'KyivType Medium Sans';
-  src: url('../fonts/KyivTypeSans-Medium-.woff2') format('woff2');
-  font-weight: medium;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'KyivType Sans';
-  src: url('../fonts/KyivTypeSans-Regular-.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-/*
-  GLOBAL
-*/
-
 *,
 *:before,
 *:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
 }
 
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
-
-main {
-  margin-top: 100vh;
-  position: relative;
-  z-index: 4;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: all 0.1s linear;
-}
-
-section {
-  /*height: 50vh;*/
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 90vw;
-  flex-flow: column wrap;
-  position: relative;
-  background-color: #F1F1F1;
-  border: 1px solid black;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  padding-left: 2rem;
-  padding-top: 2rem;
-}
-
-section:after {
-  content: '';
-  width: 200px;
-  height: 100px;
-  background: url('../img/tribal3.png') no-repeat center;
-  background-size: contain;
-}
-
-section:nth-child(2n):after {
-  content: '';
-  width: 200px;
-  height: 100px;
-  background: url('../img/tribal3.png') no-repeat center;
-  background-size: contain;
-}
-
-section h3 {
-  font-size: 1.875rem;
-  line-height: 2rem;
-  padding-bottom: 4rem;
-  font-family: 'Unbounded';
-  text-transform: uppercase;
-  position: flex;
-  top: 0;
-  left: 6vw;
-}
-
-h1 {
-    font-size: 2rem;
-}
-
-/*h3 {
-    font-family: 'Unbounded';
-    font-size: 4rem;
-    left: 0%;
-    top: -15%;
-    transform: translate(-50%, 0);
-    position: absolute;
-    animation: spin 6s infinite linear;
-    
-}*/
-
-a {
-    color: black;
-    text-decoration: none;
-    font-family: 'Unbounded';
-    font-size: 1.5rem;
-    text-transform: uppercase;
-}
-
-a:hover {
-    text-decoration: underline;
-    font-style: italic;
-    color: orangered;
-    cursor: crosshair;
-}
-
-p {
-  max-width: 75ch;
-  font-family: 'Unbounded Light';
-  font-size: 1.3rem;
-  line-height: 1.75rem;
-  position: flex;
-}
-
-/*
-  BANNER
-*/
-
-.banner {
-  height: 70px;
-  width: 100vw;
-  overflow: hidden;
-  transition: opacity 0.1s linear;
-}
-
-.banner__inner {
-  width: 200vw;
+.grid-container {
+ 
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  height: inherit;
-  animation: banner 10s infinite linear;
+  grid-template-columns: repeat(6,1fr);
+  
 }
 
-.banner__text {
-  position: flex;
-  font-family: 'Unbounded';
-  font-size: 1.5rem;
 
+.grid-item:nth-of-type(odd) {
+  background: orange;
 }
-/*.banner__image {
-  background: url('../img/welcome-tribal.png') no-repeat center;
-  height: inherit;
-  background-size: contain;
+
+.grid-item:nth-of-type(odd):hover {
+ background-image: url("../img/task.png");
+ background-size: contain;
+ background-repeat: no-repeat;
+}
+
+.grid-item:nth-of-type(even) {
+  background: blue;
+}
+
+.grid-item:nth-of-type(even):hover {
+  background: green;
+}
+
+/*img {
+  width: 100%;
+  height: auto;
 }*/
-
-@keyframes banner {
-  from {transform: translateX(0)}
-  to {transform: translateX(-100vw)}
-}
-
-/* 
-MENU
-*/
-
-.menu {
-  font-size: 1.5rem;
-  display: inline-block fixed;
-  align-items: center;
-  background-color: #F1F1F1;
-  border-style: solid;
-  height: 50px;
-}
-
-.menu ul {
-  display: flex; 
-  list-style: none;
-  float: right;
-  padding-right: 25px;
-}
-
-.menu li {
-  margin-left: 1rem;
-  line-height: 4rem;
-}
-
-
-/*
-  LOGO
-*/
-
-.logo {
-  background: url(../img/logo.svg) no-repeat center;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/*
-  PARALLAX
-*/
-
-.parallax {
-  background: url('../img/pinky-blu.svg');
-  height: 100%;
-  position: relative;
-  z-index: 0;
-  min-height: 500vh;
-}
-
-.parallax__pinky {
-  background: url('../img/pinky-blu.svg');
-  height: 100%;
-  position: absolute;
-  width: 100vw;
-  z-index: 1;
-  background-size: cover;
-}
-
-.parallax__flower {
-  background: url('../img/flower.svg');
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 0;
-  background-size: cover;
-}
-
-.parallax__line {
-  background: url('../img/line.svg') no-repeat 0px 0px;
-  height: 100%;
-  position: absolute;
-  top: 15vw;
-  left: 0;
-  width: 100vw;
-  z-index: 2;
-  background-size: contain;
-}
