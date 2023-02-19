@@ -144,8 +144,13 @@ header {
 }
 
 .object video {
-  mix-blend-mode: hard-light;
+  mix-blend-mode: darken;
+  min-width: 120px;
 }
+
+/*.object video {
+  mix-blend-mode: hard-light;
+}*/
 /* .object img {
   width: 300%;
   display: fixed;
@@ -434,10 +439,4 @@ audio {
 
 .worlds {
   min-width: 100px;
-}
-
-
-.testneu {
-  min-width: 100px;
-  mix-blend-mode: hard-light;
 }
