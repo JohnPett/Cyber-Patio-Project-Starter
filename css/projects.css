@@ -123,14 +123,14 @@ header {
   left: 0;
   z-index: 99999;
   border: 1px solid black;
-  width: 100vp;
+  width: 100vw;
   background-color: #F1F1F1;
   height: 50px;
 }
 
 .middle-info {
   display: flex;
-  grid-column-start: 4;
+  grid-column-start: 2;
   align-items: center;
   font-family: 'Unbounded Light';
   font-size: 0.8rem;
@@ -139,13 +139,14 @@ header {
 }
 
 .object {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .object video {
   mix-blend-mode: darken;
-  min-width: 120px;
+  min-width: 80px;
+  max-height: 40px;
 }
 
 /*.object video {
@@ -194,7 +195,7 @@ audio {
   white-space: nowrap;
   width: 40%;
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 3;
   position: fixed;
   max-width: 450px;
 }
@@ -285,8 +286,9 @@ audio {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: 0rem;
+
 }
 
 .grid--project {
