@@ -173,25 +173,26 @@ p {
 */
 
 .banner {
-  height: 70px;
+  height: 20vh;
   width: 100vw;
   overflow: hidden;
   transition: opacity 0.1s linear;
 }
 
 .banner__inner {
-  width: 200vw;
+  width: 100vw;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   height: inherit;
+  
   animation: banner 10s infinite linear;
 }
 
 .banner__text {
   position: flex;
   font-family: 'Unbounded';
-  font-size: 1.5rem;
-
+  font-size: 10rem;
+  justify-content: center;
 }
 /*.banner__image {
   background: url('../img/welcome-tribal.png') no-repeat center;
@@ -286,4 +287,15 @@ MENU
   width: 100vw;
   z-index: 2;
   background-size: contain;
+}
+
+/*
+GRID
+*/
+
+.grid__projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0rem;
+  justify-content: center;
 }
