@@ -230,28 +230,23 @@ p {
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  
-  
- /* animation: banner 10s infinite linear;*/
+  animation: banner 20s infinite linear;
 }
 
 .banner__text {
   position: flex;
   font-family: 'Unbounded';
-  font-size: 10rem;
+  font-size: 6rem;
+  width: 100%;
   justify-content: center;
   white-space: nowrap;
 }
-/*.banner__image {
-  background: url('../img/welcome-tribal.png') no-repeat center;
-  height: inherit;
-  background-size: contain;
-}*/
 
-/*@keyframes banner {
-  from {transform: translateX(0)}
+
+@keyframes banner {
+  from {transform: translateX(+100vw)}
   to {transform: translateX(-100vw)}
-}*/
+}
 
 /*
   MENU
