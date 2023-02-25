@@ -72,81 +72,6 @@ main {
   transition: all 0.1s linear;
 }
 
-h3 {
-  font-family: 'Unbounded';
-  font-size: 1.875rem;
-  line-height: 2rem;
-  margin-bottom: 2rem;
-  /* grid-column-start: 4;
-  grid-row-start: 2; */
-}
-
-h4 {
-  font-family: 'Unbounded Regular';
-  font-size: 1.5rem;
-  line-height: 2rem;
-  padding-top: 5rem;
-  
-}
-
-a {
-  color: black;
-  text-decoration: none;
-  font-family: 'Unbounded';
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-
-a:hover {
-  font-style: italic;
-  color: #00FF12;
-  cursor: crosshair;
-}
-
-p {
-  font-family: 'Unbounded Light';
-  font-size: 1.3rem;
-  line-height: 1.75rem;
-}
-
-img,
-video {
-  width: 100%;
-  height: auto;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99999;
-  border: 1px solid black;
-  width: 100vw;
-  background-color: #F1F1F1;
-  height: 50px;
-}
-
-.middle-info {
-  display: flex;
-  grid-column-start: 2;
-  align-items: center;
-  font-family: 'Unbounded Light';
-  font-size: 0.8rem;
-  line-height: 1rem;
-  white-space: nowrap;
-}
-
-.object {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.object video {
-  mix-blend-mode: darken;
-  min-width: 80px;
-  max-height: 40px;
-}
-
 /*section {
   width: 50vw;
   display: flex;
@@ -253,52 +178,29 @@ p {
   to {transform: translateX(-100vw)}
 }*/
 
-/*
-  MENU
+/* 
+MENU
 */
 
 .menu {
-  grid-column-start: 6;
-  display: flex;
-  align-items: center;
-}
-
-.menu__primary {
-  display: flex;
-  list-style: none;
-}
-
-.menu__secondary {
-  display: none;
-  position: absolute;
-  background: white;
-  border: 1px solid black;
-  list-style: none;
-}
-
-.menu__primary-list {
-  margin-left: 1rem;
-  margin-right: 2rem;
-  font-size: 2rem;
-  line-height: 2rem;
-  position: relative;
-}
-
-.menu__primary-list:hover .menu__secondary {
-  display: block;
-}
-
-.menu__secondary {
-  margin: 0;
-  padding: 2rem 2rem;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-
-}
-
-.menu__secondary-list {
   font-size: 1.5rem;
-  white-space: nowrap;
-  padding: 0.5rem 1rem;
+  display: inline-block fixed;
+  align-items: center;
+  background-color: #F1F1F1;
+  border-style: solid;
+  height: 50px;
+}
+
+.menu ul {
+  display: flex; 
+  list-style: none;
+  float: right;
+  padding-right: 25px;
+}
+
+.menu li {
+  margin-left: 1rem;
+  line-height: 4rem;
 }
 
 
@@ -306,13 +208,15 @@ p {
   LOGO
 */
 
-.logo-menu {
-  white-space: nowrap;
-  width: 40%;
-  grid-column-start: 1;
-  grid-column-end: 3;
+.logo {
+  background: url(../img/logo.svg) no-repeat center;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
-  max-width: 450px;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /*
@@ -362,9 +266,9 @@ p {
 GRID
 */
 
-.grid {
+.grid__projects {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin: 0rem;
-
+  justify-content: center;
 }
