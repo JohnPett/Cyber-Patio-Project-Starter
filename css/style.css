@@ -307,7 +307,7 @@ p {
   grid-column-start: 1;
   grid-column-end: 3;
   position: fixed;
-  max-width: 450px;
+  max-width: 300px;
 }
 
 /*
@@ -319,35 +319,37 @@ p {
   height: 100%;
   position: relative;
   z-index: 0;
-  min-height: 500vh;
+  min-height: 400vh;
 }
 
 .parallax__pinky {
-  background: url('../img/pinky-blu.svg');
+  background: url('../img/pinky.svg');
+  background-repeat: no-repeat;
   height: 100%;
   position: absolute;
   width: 100vw;
+  top: 8vw;
   z-index: 1;
-  background-size: cover;
+  background-size: contain;
 }
 
 .parallax__flower {
-  background: url('../img/flower.svg');
+  background: url('../img/flower-final.png');
+  background-repeat: no-repeat;
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100vw;
+  right: 0;
+  width: 80vw;
   z-index: 0;
-  background-size: cover;
+  background-size: contain;
 }
 
 .parallax__line {
   background: url('../img/line.svg') no-repeat 0px 0px;
   height: 100%;
   position: absolute;
-  top: 15vw;
-  left: 0;
+  top: 70vh;
   width: 100vw;
   z-index: 2;
   background-size: contain;
