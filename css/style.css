@@ -147,11 +147,22 @@ header {
   max-height: 40px;
 }
 
-/*section {
-  width: 50vw;
+section {
+  height: 50vh;
   display: flex;
-  
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  flex-flow: column wrap;
+  position: relative;
+  background-color: #F1F1F1;
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  padding-left: 2rem;
+  padding-top: 2rem;
+  z-index: 4;
 }
+
 
 section:after {
   content: '';
