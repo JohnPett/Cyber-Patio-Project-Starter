@@ -25,7 +25,8 @@ a {
 } 
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color:#FFBAD3
 } 
 
 h1 {
@@ -70,7 +71,6 @@ a {
 
 .header {
   padding: 2rem;
-  text-transform: uppercase;
   position: fixed;
   top: 0;
   left: 0;
@@ -89,7 +89,8 @@ a {
 }
 
 .menu {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
   color: white;
   display: flex;
   align-items: flex-end;
@@ -113,7 +114,8 @@ a {
 */
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
   line-height: 2rem;
   grid-column-start: 1;
   grid-column-end: 2;
@@ -123,7 +125,7 @@ a {
 } 
 
 .services {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.5rem;
   color: white;
 } 
@@ -188,6 +190,7 @@ a {
 .swiper-slide p {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
+  white-space: nowrap;
 }
 
 .swiper-slide:hover p {
@@ -197,23 +200,23 @@ a {
 .swiper-slide:nth-of-type(1) p:first-of-type {
   grid-column-start: 1;
   grid-row-start: 1;
-  align-items: center;
+  align-items: right;
 }
 
 .swiper-slide:nth-of-type(1) p:last-of-type {
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-row-start: 2;
-  align-items: flex-start;
+  align-items: left;
 } 
 
 .swiper-slide:nth-of-type(2) p:first-of-type {
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-row-start: 1;
-  align-items: flex-end;
+  align-items: left;
 }
 
 .swiper-slide:nth-of-type(2) p:last-of-type {
-  grid-column-start: 2;
+  grid-column-start: 3;
   grid-row-start: 2;
   align-items: center;
 } 
@@ -221,7 +224,7 @@ a {
 .swiper-slide:nth-of-type(3) p:first-of-type {
   grid-column-start: 2;
   grid-row-start: 1;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .swiper-slide:nth-of-type(3) p:last-of-type {
@@ -237,7 +240,7 @@ a {
 }
 
 .swiper-slide:nth-of-type(4) p:last-of-type {
-  grid-column-start: 2;
+  grid-column-start: 1;
   grid-row-start: 2;
   align-items: center;
 }
@@ -259,6 +262,8 @@ a {
 .swiper-pagination {
   mix-blend-mode: exclusion;
 }
+
+
 
 /*
   DIALOG
@@ -290,30 +295,55 @@ dialog h3 {
   pointer-events: none;
   color: white;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 dialog h4 {
+  font-size: 1.4rem;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 4rem;
   z-index: 99999;
   color: white;
 }
 
 dialog cite {
-  position: absolute;
+  font-size: 1.4rem;
+  position: fixed;
+  bottom: 4rem;
+  left: 4rem;
+  z-index: 99999;
+  color: white;
+  font-style: normal;
+  align-items: center;
+  opacity: 1;
+}
+
+
+dialog .swiper-inner {
+  width:70%;
+  height: 70%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+dialog .swiper-inner img {
+  width: auto;
+}
+
+dialog .swiper-inner p {
+  position: fixed;
   bottom: 2rem;
   left: 2rem;
   z-index: 99999;
   color: white;
-}
-
-dialog .swiper-slide img {
-  max-width: 70%;
-  max-height: 70%;
-  object-fit: contain;
-  object-position: center;
-}
+  font-style: normal;
+  align-items: left;
+  }
 
 dialog .swiper-button-next {
   position: fixed;
@@ -344,11 +374,13 @@ dialog .swiper-button-prev {
 }
 
 .counter {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   position: fixed;
   bottom: 4rem;
+  right: 4rem;
   color: #FFBAD3;
   z-index: 99999;
+  align-items: center;
 }
 
  
