@@ -17,6 +17,7 @@ html {
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
+  background-color: black;
 } 
 
 a {
@@ -25,6 +26,11 @@ a {
 } 
 
 a:hover {
+  text-decoration: none;
+  color:#FFBAD3
+} 
+
+a:active {
   text-decoration: none;
   color:#FFBAD3
 } 
@@ -43,11 +49,22 @@ h6 {
   font-weight: 400;
 }
 
+h5 {
+  font-size: 3rem;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color: white;
+}
+
 p,
 a {
   font-size: 1.4rem;
   line-height: 2rem;
   color: white;
+}
+
+body#about.html{
+  background: black
 }
     
 /*
@@ -383,5 +400,77 @@ dialog .swiper-button-prev {
   align-items: center;
 }
 
+.about__wrapper{
+  margin-top:10rem;
+  margin-left:4rem;
+}
+
+.about__wrapper p{
+  margin-bottom: 1.2rem;
+}
+
+.about-intro{
+  width:70%;
+  
+}
+
+.selected-clients {
+  margin-top: 5rem;
+}
+
+.selected-clients__grid {
+  display: grid;
+  height: fit-content;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.selected-clients:nth-of-type(1){
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.selected-clients:nth-of-type(2){
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+}
+
+.contact-info__grid {
+  display: grid;
+  margin-top: 5rem;
+  height: fit-content;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.contact-info__grid a {
+  font-size: 3rem;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color: white;
+}
+
+.contact-info__grid a:hover {
+  font-size: 3rem;
+  line-height: 120%;
+  letter-spacing: -2%;
+  color: pink;
+}
+
+.contact-info__grid:nth-of-type(1){
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.contact-info__grid:nth-of-type(2){
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.contact-info__grid:nth-of-type(3){
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
  
 
